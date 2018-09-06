@@ -1,0 +1,19 @@
+name: kPVP
+main: me.signifies.kPVP.kPVP
+version: 0.1
+description: Custom player verses player plugin.
+website: www.github.com/signifies/kPVP
+author: Signifies
+
+commands:
+  kpvp:
+    description:
+    aliases: [kp]
+  screenshare:
+    description: Screenshare a player...
+    aliases: [kscreen,kscreenshare,ksc]
+  watch:
+    description: Follow a player invisible.
+    aliases: [kwatch]
+
+

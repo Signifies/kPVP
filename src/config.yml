@@ -1,0 +1,20 @@
+# # # # # # # # # # # # # # # # # # # # # # # # #
+# kPVP Battle Plugin Configuration file.
+# If you fuck up your file, delete it and regenerate it.
+# Common tags used within this file are labeled.
+# Tags: {player}, {name}, {stat_kill}, {stat_death}
+# {stat_pergame}, {stat_allgames}
+# # # # # # # # # # # # # # # # # # # # # # # # #
+
+# General Messages.
+Messages:
+  no-perms: "Hey you! No one told you could that!"
+  unknown-param: "I don't know what you mean by {param}"
+
+Stats:
+  log-kill: true
+  log-death: true
+  log-game: true
+
+Inventory:
+
