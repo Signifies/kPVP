@@ -18,3 +18,42 @@ Stats:
 
 Inventory:
 
+# Database Management.
+Database:
+  Enabled: false
+  host: 1.0.0.0
+  username: tachi
+  password: 14931
+  database: user_db
+
+# Help-book Settings.
+help-book:
+  admin-book:
+    item: "WRITTEN_BOOK"
+    name: "{player}'s &4Help Book."
+    amount: 1
+    rank: "{MOD}"
+    lore:
+    - "---------------------"
+    - "&cUser Data: "
+    - "&b{player}"
+    - "&a{uuid}"
+    - "&f{time}"
+    - "{location}"
+    - "&f------------------"
+    - "&6General Commands:"
+    - "&fTAGS: {builder},{mod},{smod},{admin},{dev}"
+    - "&7/build helpbook {mod}+"
+    - "&7/build warps - &fLists warps. &f|| &7/warp <warp> {builder}+"
+    - "&7/build ? -&f Lists all build cmds.{admin}+"
+    - "&7/build mode &f- Change gamemode, see [usage] flag. {builder}+"
+    - "&7/tp <player> &f|| &7/tphere <player>&f teleportation! {mod}+"
+    - "&7/chat clear &f||&7 /chat clearself &f|| &7/chat clearuser <user> {mod}+"
+    - "&7/chat mute <world> &f|| &7/chat unmute <world> {mod}+"
+    - "&7/kick <player> &f-Kick user(s) {mod}+"
+    - "&7/list"
+    - "&7/whitelist <&f[on] [off] [list] [clear]&7> {admin}+"
+    - "&7/invsee <&f[type][player]&7>"
+    - "&7/environment <flag> [world] <setting>"
+    - "&7/environment [tp] <world>"
+    - "&7/environment [tp] <world> <player>"
