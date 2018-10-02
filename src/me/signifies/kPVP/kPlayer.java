@@ -50,8 +50,8 @@ public class kPlayer implements Listener {
         duels.remove(one,two);
     }
 
-    public boolean isInDuel (UUID one, UUID two) {
-        return getDuels().containsKey(one) && getDuels().containsValue(two);
+    public boolean isInDuel (UUID one, UUID two) throws NullPointerException {
+        return two.equals(duels.get(one)) || one.equals(duels.get(two));
     }
 
     public Inventory getinv ()
