@@ -1,5 +1,6 @@
 package me.signifies.kPVP;
 
+import files.PVPConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -13,15 +14,23 @@ public class kPVP extends JavaPlugin{
 
     public static boolean DEBUG = true;
     PVPUtils util = new PVPUtils();
-
+    PVPConfig conf = new PVPConfig(this);
     public void onEnable() {
-
+        config();
 
     }
 
     public void onDisable() {
 
     }
+
+
+    void config() {
+        conf.saveDefaultPVPConfig();
+        conf.savePVPConfig();
+
+    }
+
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String args[]) {
 
