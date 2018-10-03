@@ -1,4 +1,4 @@
-package files;
+package classes;
 
 import org.bukkit.entity.Player;
 

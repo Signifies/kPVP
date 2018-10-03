@@ -6,8 +6,8 @@ public enum Messages {
 
     TEST("Test Message"),
     INFORM("General Information -> "),
-    ARENA_START("Arena Started"),
-    ARENA_FINISH("Arena Finished."),
+    ARENA_START("ArenaManager Started"),
+    ARENA_FINISH("ArenaManager Finished."),
     DUEL("Duel begins..."),
     GENERAL(""),
     PERMISSION("You can't do this.");
