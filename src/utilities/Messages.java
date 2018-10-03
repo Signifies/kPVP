@@ -4,12 +4,14 @@ import org.bukkit.entity.Player;
 
 public enum Messages {
 
-    TEST(""),
-    INFORM(""),
-    ARENA_START(""),
-    ARENA_FINISH(""),
-    DUEL(""),
-    GENERAL("");
+    TEST("Test Message"),
+    INFORM("General Information -> "),
+    ARENA_START("ArenaManager Started"),
+    ARENA_FINISH("ArenaManager Finished."),
+    DUEL("Duel begins..."),
+    GENERAL(""),
+    PERMISSION("You can't do this.");
+
 
     String msg;
     Messages(String msg){
