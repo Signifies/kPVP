@@ -2,11 +2,13 @@ package me.signifies.kPVP;
 
 import files.PVPConfig;
 import files.StatisticsFile;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.yaml.snakeyaml.events.Event;
 import utilities.PVPUtils;
 
 public class kPVP extends JavaPlugin{
@@ -19,7 +21,7 @@ public class kPVP extends JavaPlugin{
     StatisticsFile stat = new StatisticsFile(this);
     public void onEnable() {
         config();
-
+        Bukkit.getServer().getPluginManager().registerEvents(new Events(),this);
     }
 
     public void onDisable() {
