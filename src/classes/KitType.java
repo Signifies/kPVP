@@ -6,7 +6,6 @@ package classes;
 public enum KitType {
 
     CTF,
-    KIT_PVP;
-
+    KIT_PVP,
 
 }

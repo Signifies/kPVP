@@ -2,8 +2,8 @@ package classes;
 
 public enum Team
 {
-    RED,
-    BLUE;
+    A,
+    B;
     public static Team getRandomTeam()
     {
         return values() [(int) (Math.random() * values().length)];
