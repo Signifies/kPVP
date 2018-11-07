@@ -29,7 +29,7 @@ public class DBAPI implements DataTransaction{
 
     @Override
     public void transaction(SQL sql, AccountData data) {
-        
+
     }
 
     @Override
