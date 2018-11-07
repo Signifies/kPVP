@@ -1,4 +1,4 @@
-package utilities;
+package sql;
 
 import org.bukkit.ChatColor;
 
