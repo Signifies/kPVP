@@ -1,5 +1,6 @@
 package sql;
 
+import com.mysql.jdbc.SQLError;
 import org.bukkit.ChatColor;
 
 import java.sql.Connection;
@@ -20,7 +21,7 @@ public class SQL {
      * @param password Password for the current database.
      * @param database Specific database we want to connect to.
      */
-    public SQL(boolean enabled,String address,int port, String username, String password, String database) {
+    public SQL(boolean enabled,String address,int port, String username, String password, String database) throws SQLException{
         if(enabled)
         {
             this.host = address;

@@ -9,7 +9,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import sql.SQL;
 import utilities.PVPUtils;
+
+import java.sql.SQLException;
 
 public class kPVP extends JavaPlugin{
 
@@ -20,12 +23,26 @@ public class kPVP extends JavaPlugin{
     PVPConfig conf = new PVPConfig(this);
     StatisticsFile stat = new StatisticsFile(this);
     private ArenaManager arena;
+    private SQL sql;
+    private boolean enabled;
+
+    public void databaseSetup() {
+        try {
+            sql = new SQL(enabled,"",0,"","","");
+        }catch (SQLException e){
+            PVPUtils.log(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+
     public void onEnable() {
 
         config();
         arena = new ArenaManager(this);
         arena.serialise();
         Bukkit.getServer().getPluginManager().registerEvents(new Events(),this);
+        databaseSetup();
     }
 
     public void onDisable() {
