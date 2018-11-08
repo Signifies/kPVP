@@ -4,6 +4,7 @@ import arenamanagement.ArenaManager;
 import files.PVPConfig;
 import files.StatisticsFile;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -28,17 +29,15 @@ public class kPVP extends JavaPlugin{
 
     public void databaseSetup() {
         try {
-            sql = new SQL(enabled,"",0,"","","");
+            //sql = new SQL(enabled,"",0,"","","");
+            sql = new SQL(conf.getPVPConfig().getBoolean("Database.Enabled"),conf.getPVPConfig().getString("Database.host"), conf.getPVPConfig().getInt("Database.port"),conf.getPVPConfig().getString("Database.username"), conf.getPVPConfig().getString("Database.password"), conf.getPVPConfig().getString("Database.database"));
         }catch (SQLException e){
             PVPUtils.log(e.getMessage());
             e.printStackTrace();
         }
     }
 
-
     public void onEnable() {
-
-        config();
         arena = new ArenaManager(this);
         arena.serialise();
         Bukkit.getServer().getPluginManager().registerEvents(new Events(),this);
