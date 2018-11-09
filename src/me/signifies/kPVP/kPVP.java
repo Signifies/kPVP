@@ -4,12 +4,16 @@ import arenamanagement.ArenaManager;
 import files.PVPConfig;
 import files.StatisticsFile;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
+import sql.SQL;
 import utilities.PVPUtils;
+
+import java.sql.SQLException;
 
 public class kPVP extends JavaPlugin{
 
@@ -20,12 +24,24 @@ public class kPVP extends JavaPlugin{
     PVPConfig conf = new PVPConfig(this);
     StatisticsFile stat = new StatisticsFile(this);
     private ArenaManager arena;
-    public void onEnable() {
+    private SQL sql;
+    private boolean enabled;
 
-        config();
+    public void databaseSetup() {
+        try {
+            //sql = new SQL(enabled,"",0,"","","");
+            sql = new SQL(conf.getPVPConfig().getBoolean("Database.Enabled"),conf.getPVPConfig().getString("Database.host"), conf.getPVPConfig().getInt("Database.port"),conf.getPVPConfig().getString("Database.username"), conf.getPVPConfig().getString("Database.password"), conf.getPVPConfig().getString("Database.database"));
+        }catch (SQLException e){
+            PVPUtils.log(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public void onEnable() {
         arena = new ArenaManager(this);
         arena.serialise();
         Bukkit.getServer().getPluginManager().registerEvents(new Events(),this);
+        databaseSetup();
     }
 
     public void onDisable() {
@@ -71,5 +87,9 @@ public class kPVP extends JavaPlugin{
 
     public ArenaManager getManager(){
         return arena;
+    }
+
+    public SQL getSQL() {
+        return this.sql;
     }
 }
