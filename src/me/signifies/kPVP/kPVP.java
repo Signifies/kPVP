@@ -88,4 +88,8 @@ public class kPVP extends JavaPlugin{
     public ArenaManager getManager(){
         return arena;
     }
+
+    public SQL getSQL() {
+        return this.sql;
+    }
 }
