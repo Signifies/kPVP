@@ -13,7 +13,7 @@ import java.util.*;
 
 public class PVPUtils {
 
-    private static String name= "[kPVP]";
+    private static String name= "&b[kPVP]&r";
 
     String author = "9c5dd792-dcb3-443b-ac6c-605903231eb2";
     public static String  defaultResponse ="Unknown command. Type \"/help\" for help.";

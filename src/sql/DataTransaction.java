@@ -18,7 +18,7 @@ public interface DataTransaction
 
     void checkUser(Player player);
 
-    void createTable();
+    void createTables();
 
     HashMap<UUID, Integer> checkData();
 }

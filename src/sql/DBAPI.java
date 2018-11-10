@@ -91,8 +91,9 @@ public class DBAPI implements DataTransaction{
     }
 
     @Override
-    public void createTable() {
+    public void createTables() {
         sql.createTable("CREATE TABLE IF NOT EXISTS datatable (id INT AUTO_INCREMENT, UUID varchar(50) PRIMARY KEY, name varchar(50), kills INT, deaths INT, KDR DOUBLE(7,4), stamp TIMESTAMP, server_name varchar(25)); ");
+        //sql.createTable("CREATE TABLE IF NOT EXISTS statdata (id INT AUTO_INCREMENT, )");
     }
 
     @Override
