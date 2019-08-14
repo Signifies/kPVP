@@ -1,7 +1,7 @@
 name: kPVP
 main: me.signifies.kPVP.kPVP
-version: 0.1
-description: Custom player verses player plugin.
+version: 1.0
+description: Custom Map plugin for PVP.
 website: www.github.com/signifies/kPVP
 author: Signifies
 
