@@ -3,6 +3,7 @@ package utilities;
 import org.bukkit.entity.Player;
 
 public enum Messages {
+  //Want to make sure everythings going over.
 
     TEST("Test Message"),
     INFORM("General Information -> "),
